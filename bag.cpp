@@ -1,6 +1,7 @@
 //Sachen Sampath, Kai Hilbourne 1 /17 / 20
 #include "bag.h"
-#include<iostream>
+#include <iostream>
+#include <assert.h>
 
 // YOU CAN INCLUDE OTHER HEADER FILES HERE IF NEEDED
 // DO NOT ADD THE FOLLOWING HEADERS:
@@ -49,6 +50,7 @@ string Word::getWord() const {
 
 //puts a new word into bag
 void Bag::insert(string newWord) {
+  assert(amount < LIMIT);
   bool exists = false;
   for(int i = 0; i < amount; i++) {
     if(container[i].getWord() == newWord) {
